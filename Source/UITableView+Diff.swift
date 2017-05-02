@@ -16,7 +16,7 @@ public extension UITableView {
   /// - parameter new:       The current state of the table view.
   /// - parameter section:   The section where these changes took place.
   /// - parameter animation: The animation type.
-  func applyDiff<T: Collection>(_ old: T, _ new: T, inSection section: Int, withAnimation animation: UITableViewRowAnimation) where T.Iterator.Element: Hashable, T.IndexDistance == Int, T.Index == Int {
+  public func applyDiff<T: Collection>(_ old: T, _ new: T, inSection section: Int, withAnimation animation: UITableViewRowAnimation) where T.Iterator.Element: Hashable, T.IndexDistance == Int, T.Index == Int {
     let update = ListUpdate(diff(old, new), section)
 
     beginUpdates()
